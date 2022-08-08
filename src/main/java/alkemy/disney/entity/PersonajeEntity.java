@@ -1,4 +1,4 @@
-package com.alkemy.disney.disney.entity;
+package alkemy.disney.entity;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -14,7 +14,7 @@ import java.util.List;
 @Setter
 
 
-public class Personaje {
+public class PersonajeEntity {
 
     @Id
     @Column
@@ -31,8 +31,8 @@ public class Personaje {
 
     private String historia;
 
-    @ManyToMany(mappedBy = "personajes", cascade = CascadeType.ALL)
-    private List<PeliculasSeries> peliculasSeries = new ArrayList<>();
+    @ManyToMany(mappedBy = "personajes", cascade = CascadeType.PERSIST)
+    private List<PeliculasSeriesEntity> peliculasSeries = new ArrayList<>();
 
 
 

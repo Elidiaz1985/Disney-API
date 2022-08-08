@@ -1,4 +1,4 @@
-package com.alkemy.disney.disney.entity;
+package alkemy.disney.entity;
 
 
 
@@ -13,7 +13,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 
-public class Genero {
+public class GeneroEntity {
     @Id
     @GeneratedValue (strategy = GenerationType.SEQUENCE)
 

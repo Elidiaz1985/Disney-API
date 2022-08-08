@@ -1,4 +1,4 @@
-package com.alkemy.disney.disney.entity;
+package alkemy.disney.entity;
 
 
 import lombok.Getter;
@@ -10,12 +10,13 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
+;
 
 @Entity
 @Table( name = "peliculas_o_series")
 @Getter
 @Setter
-public class PeliculasSeries {
+public class PeliculasSeriesEntity {
 
     @Id
     @GeneratedValue (strategy = GenerationType.SEQUENCE)
@@ -31,9 +32,9 @@ public class PeliculasSeries {
 
     private Byte calificacion;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "genero_id", insertable = false, updatable = false)
-    private Genero genero;
+    private GeneroEntity genero;
 
     @Column(name = "genero_id", nullable = false)
     private Long generoId;
@@ -50,5 +51,5 @@ public class PeliculasSeries {
             inverseJoinColumns = @JoinColumn(name = "personaje_id")
     )
 
-    private Set<Personaje> personajes = new HashSet<Personaje>();
+    private Set<PersonajeEntity> personajes = new HashSet<PersonajeEntity>();
 }
